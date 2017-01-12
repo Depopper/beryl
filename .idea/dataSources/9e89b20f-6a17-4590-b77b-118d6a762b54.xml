@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Rails Beryl: development">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="beryl">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="test"/>
+    <table id="6" parent="1" name="ar_internal_metadata"/>
+    <table id="7" parent="1" name="schema_migrations"/>
+    <table id="8" parent="1" name="users"/>
+    <column id="9" parent="6" name="key">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="10" parent="6" name="value">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="11" parent="6" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="12" parent="6" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="13" parent="6" name="PRIMARY">
+      <columns>key</columns>
+      <primary>1</primary>
+    </key>
+    <column id="14" parent="7" name="version">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="15" parent="7" name="PRIMARY">
+      <columns>version</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="8" name="username">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="18" parent="8" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="19" parent="8" name="password_digest">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="8" name="firstname">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="8" name="lastname">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="22" parent="8" name="avatar">
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="23" parent="8" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="24" parent="8" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="25" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,40 @@
+<% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+            <li>
+              <strong><%= error %></strong>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<div class="card">
+  <div class="card-header">Editer</div>
+  <div class="card-block">
+    <%=	 form_for @user,url: profil_path, html: {class: 'form-horizontal'} do |f| %>
+        <div class="from-inline">
+          <%= f.label :avatar_file, "Avatar" %>
+          <%= f.file_field :avatar_file, class: 'form-control col-6' %>
+        </div>
+        <div class="from-inline">
+          <%= f.label :username, "Nom d'utilisateur" %>
+          <%= f.text_field :username, class: 'form-control col-6' %>
+        </div>
+        <div class="from-group">
+          <%= f.label :email, "Email" %>
+          <%= f.email_field :email, class: 'form-control col-6' %>
+        </div>
+        <div class="from-group">
+          <%= f.label :firstname, "Prenom" %>
+          <%= f.text_field :firstname, class: 'form-control col-6' %>
+        </div>
+        <div class="from-group">
+          <%= f.label :lastname, "Nom de famile" %>
+          <%= f.text_field :lastname, class: 'form-control col-6' %>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem">S'inscrire</button>
+    <% end %>
+  </div>
+</div>

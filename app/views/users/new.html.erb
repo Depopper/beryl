@@ -1,0 +1,36 @@
+<% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li>
+            <strong><%= error %></strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<div class="card">
+  <div class="card-header">S'inscrire</div>
+  <div class="card-block">
+    <%=	 form_for @user, {class: 'form-horizontal'} do |f| %>
+      <div class="from-group">
+        <%= f.label :username, "Nom d'utilisateur" %>
+        <%= f.text_field :username, class: 'form-control col-6' %>
+      </div>
+      <div class="from-group">
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, class: 'form-control col-6' %>
+      </div>
+      <div class="from-group">
+        <%= f.label :password, "Mot de passe" %>
+        <%= f.password_field :password, class: 'form-control col-6' %>
+      </div>
+      <div class="from-group">
+        <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
+        <%= f.password_field :password_confirmation, class: 'form-control col-6' %>
+      </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem">S'inscrire</button>
+    <% end %>
+  </div>
+</div>

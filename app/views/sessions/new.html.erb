@@ -1,0 +1,18 @@
+
+<div class="card">
+  <div class="card-header">Se connecter</div>
+  <div class="card-block">
+    <%=	 form_for :user, url: new_session_path, html: {class: 'form-horizontal'} do |f| %>
+        <div class="from-group">
+          <%= f.label :username, "Nom d'utilisateur ou email" %>
+          <%= f.text_field :username, class: 'form-control col-6' %>
+        </div>
+        <div class="from-group">
+          <%= f.label :password, "Mot de passe" %>
+          <%= f.password_field :password, class: 'form-control col-6' %>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem">Se connecter</button>
+    <% end %>
+  </div>
+</div>
